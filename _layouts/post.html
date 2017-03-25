@@ -13,13 +13,26 @@ layout: default
                 {% endif %}
                 <a href="/blog" class="uk-icon-button" uk-icon="icon: home" title="Blog index" uk-tooltip="pos: top"></a>
                 <a href="{{ post.url }}" class="uk-icon-button" uk-icon="icon: bookmark" title="Why don't bookmark this?" uk-tooltip="pos: top"></a>
-                <!--<a href="#" class="uk-icon-button" uk-icon="icon: comment"></a>-->
+                <a href="#" class="uk-icon-button" uk-toggle="target: #disqus_thread" uk-icon="icon: comment" title="Want to leave a comment? Click!" uk-tooltip="pos: bottom"></a>
                 {% if page.next %}
                     <a href="{{ page.next.url }}" class="uk-icon-button" uk-icon="icon: chevron-right" title="Next post" uk-tooltip="pos: top"></a>
                 {% endif %}
             </div>
             {% if page.subtitle %}<p class="uk-text-large uk-margin-top-remove uk-text-muted">{{ page.subtitle }}</p>{% endif %}
             {{ content }}
+            <div id="disqus_thread" hidden></div>
+            <script>
+                var disqus_config = function () {
+                this.page.url = '{{site.url}}{{page.url}}';
+                this.page.identifier = '{{page.date}}';
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://mipnamicnet.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>               
         </article>
         {% include rightbar.html %}
     </div>
