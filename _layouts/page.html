@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-3-4@m">
+            <h2 class="uk-margin-bottom-remove">{{ page.title }}</h2>
+            {% if page.subtitle %}<p class="uk-margin-top-remove uk-text-muted">{{ page.subtitle }}</p>{% endif %}
+            {{ content }}
+        </div>
+        {% include rightbar.html %}
+    </div>
+</div>

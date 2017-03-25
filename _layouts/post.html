@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+        <article class="uk-width-3-4@m">
+            <div>
+                <h2 class="uk-margin-bottom-remove">{{ page.title }}</h2>
+                <p class="uk-article-meta">Written on {{ page.date  | date: "%a, %b %d, %Y"}}</p>
+                {% if page.previous %}
+                    <a href="{{ page.previous.url }}" class="uk-icon-button" uk-icon="icon: chevron-left" title="Previous post" uk-tooltip="pos: top"></a>
+                {% endif %}
+                <a href="/blog" class="uk-icon-button" uk-icon="icon: home" title="Blog index" uk-tooltip="pos: top"></a>
+                <a href="{{ post.url }}" class="uk-icon-button" uk-icon="icon: bookmark" title="Why don't bookmark this?" uk-tooltip="pos: top"></a>
+                <!--<a href="#" class="uk-icon-button" uk-icon="icon: comment"></a>-->
+                {% if page.next %}
+                    <a href="{{ page.next.url }}" class="uk-icon-button" uk-icon="icon: chevron-right" title="Next post" uk-tooltip="pos: top"></a>
+                {% endif %}
+            </div>
+            {% if page.subtitle %}<p class="uk-text-large uk-margin-top-remove uk-text-muted">{{ page.subtitle }}</p>{% endif %}
+            {{ content }}
+        </article>
+        {% include rightbar.html %}
+    </div>
+</div>

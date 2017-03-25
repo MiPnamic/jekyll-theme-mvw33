@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-3-4@m">
+            {% for post in site.posts %}
+            <article class="uk-article">
+
+                <h1 class="uk-article-title">
+                    {{ post.title }}
+                </h1>
+                <p class="uk-article-meta">Written on {{ post.date  | date: "%a, %b %d, %Y"}}</p>
+                <div>
+                    <a href="{{ post.url }}" class="uk-icon-button" uk-icon="icon: link"></a>
+                </div>
+                <p>
+                    {{ post.excerpt }}
+                    <a href="" class="" uk-totop title="To the top" uk-tooltip="pos: bottom"></a>
+                    {% if post.excerpt != post.content %}
+                        <a href="{{ post.url }}" class="uk-text-small uk-text-muted" uk-icon="icon: more" title="Want to read more? Just click." uk-tooltip="pos: right"></a>
+                    {% endif %}
+                </p>
+                
+            </article>
+            <hr/>
+            {% endfor %}
+        </div>
+
+        {% include rightbar.html %}
+    </div>
+</div>

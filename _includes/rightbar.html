@@ -1,0 +1,27 @@
+<div class="uk-width-1-4@m">
+    <div class="uk-panel uk-panel-box uk-text-center">
+        <img class="uk-border-rounded" width="120" height="120" src="{{site.avatar}}" alt="{{site.author}} avatar">
+        <h3>{{site.author}}</h3>
+        <p class="uk-text-meta"><a href="/about">{{site.description}}</a></p>
+    </div>
+    <hr />
+    <div class="uk-panel uk-text-meta uk-text-center">
+        {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="me"><i class="fa fa-instagram fa-2x"></i></a>{% endif %}
+        {% if site.social.github %}<a href="{{ site.social.github }}" target="_blank" rel="me"><i class="fa fa-github fa-2x"></i></a>{% endif %}
+        {% if site.social.codepen %}<a href="{{ site.social.codepen }}" target="_blank" rel="me"><i class="fa fa-codepen fa-2x"></i></a>{% endif %}
+        {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" target="_blank" rel="me"><i class="fa fa-linkedin fa-2x"></i></a>{% endif %}
+        {% if site.social.twitter %}<a href="{{ site.social.twitter }}" target="_blank" rel="me"><i class="fa fa-twitter fa-2x"></i></a>{% endif %}
+        {% if site.social.facebook %}<a href="{{ site.social.facebook }}" target="_blank" rel="me"><i class="fa fa-facebook fa-2x"></i></a>{% endif %}
+    </div>
+    <hr />
+    {% if site.extrainfo %}
+    <div class="uk-panel uk-text-meta uk-text-center">
+        {% for info in site.extrainfo %}
+            <p>{{ info }}</p>
+        {% endfor %}
+    </div>
+    <hr />
+    {% endif %}
+    <p class="uk-text-meta uk-text-center">Last update on:<br/>
+    {{site.time}}</p>
+</div>

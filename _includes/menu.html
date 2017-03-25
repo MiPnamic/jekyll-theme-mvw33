@@ -1,0 +1,14 @@
+<nav class="uk-navbar uk-navbar-container uk-margin">
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#offcanvas-slide" uk-toggle title="Hi, I'm a menu, just click me." uk-tooltip="pos: right"></a>
+    </div>
+    <div class="uk-navbar-center">
+        <a href="/" class="uk-navbar-item uk-logo">{{site.title}}</a>
+    </div>
+</nav>
+
+<div id="offcanvas-slide" uk-offcanvas="mode: push">
+    <div class="uk-offcanvas-bar">
+        {% include sidebar.html %}
+    </div>
+</div>
