@@ -10,6 +10,8 @@
     <meta property="og:title" content="{{site.og.title}}" />
     <meta property="og:image" content="{{site.og.image}}" />
     <meta property="og:locale" content="{{site.og.locale}}" />
+    <meta property="og:description" content="{% if page.description %}{{page.description}}{% else %}{{site.og.description}}{% endif %}"/>
+    <meta name="description" content="{% if page.description %}{{page.description}}{% else %}{{site.og.description}}{% endif %}"/>
     <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="/assets/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/css/uikit.min.css" crossorigin="anonymous"
