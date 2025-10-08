@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     mvw33 (0.1.0)
-      jekyll (~> 3.4)
+      jekyll (>= 3.4, < 5.0)
 
 GEM
   remote: https://rubygems.org/
